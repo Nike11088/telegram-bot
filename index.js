@@ -28,7 +28,7 @@ const start = () => {
     }
 
     if (text === '/info') {
-      return bot.sendMessage(chatId, `Тебя зовут ${msg.from.first_name}  ${msg.from.last_name ?? ''}`)
+      return bot.sendMessage(chatId, `Тебя зовут ${msg.from.first_name} ${msg.from.last_name ?? ''}`)
     }
 
     if (text === '/game') {
