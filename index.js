@@ -28,7 +28,7 @@ const start = () => {
     }
 
     if (text === '/info') {
-      return bot.sendMessage(chatId, `Тебя зовут ${msg.from.first_name} ${msg.from.last_name}`)
+      return bot.sendMessage(chatId, `Тебя зовут ${msg.from.first_name}  ${msg.from.last_name ?? ''}`)
     }
 
     if (text === '/game') {
@@ -46,7 +46,9 @@ const start = () => {
       return startGame(chatId)
     }
 
-    if (data === chats[chatId]) {
+    console.log('data', data)
+    console.log('chats[chatId]', chats[chatId])
+    if (data == chats[chatId]) {
       return await bot.sendMessage(
         chatId,
         `Поздравляю, ты отгадал цифру ${chats[chatId]}`,
